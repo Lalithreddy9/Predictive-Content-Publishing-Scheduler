@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global base styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #f9fafb; /* soft light gray */
+  color: #111827; /* slate-900 */
+}
+
+/* FullCalendar - rounded day tiles */
+.fc .fc-daygrid-day {
+  padding: 0.6rem;
+}
+
+.fc .fc-daygrid-day-frame {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.6rem;
+  min-height: 6rem;
+  box-shadow: 0 1px 2px rgba(2,6,23,0.04);
+  border: 1px solid rgba(17,24,39,0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.fc .fc-daygrid-day-top {
+  display: flex;
+  justify-content: flex-end;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* Make events clear and rounded */
+.fc .fc-event,
+.fc .fc-event-main {
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Toolbar buttons - lighter default and clearer active state */
+.fc .fc-button {
+  background: #f3f4f6; /* gray-100 */
+  color: #374151; /* gray-700 */
+  border: 0;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  box-shadow: none;
+  transition: background-color 180ms ease, color 180ms ease, transform 150ms ease;
+}
+
+.fc .fc-button:hover { background: #e6e9ef; }
+
+/* Active month/week button: lighter and clearer */
+.fc .fc-button[aria-pressed="true"],
+.fc .fc-button-active {
+  background: #3b82f6; /* blue-500 */
+  color: #ffffff;
+  border: none;
+  box-shadow: none;
+}
+
+.fc .fc-button:focus-visible { box-shadow: 0 0 0 4px rgba(59,130,246,0.14); }
+
+/* Smooth fade animation when switching views (month <-> week) */
+@keyframes fc-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fc .fc-view.fade-in { animation: fc-fade 320ms ease; }
+
