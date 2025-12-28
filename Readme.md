@@ -117,7 +117,6 @@ AI_Content_Scheduler/
 │
 └── README.md
 
-
 ## 📊 Sample Dataset
 
 The project includes a seeded dataset containing:
