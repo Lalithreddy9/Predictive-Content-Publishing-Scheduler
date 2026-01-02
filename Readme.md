@@ -154,7 +154,7 @@ npm run dev
 3️⃣ Frontend Setup
 cd frontend
 npm install
-npm run dev
+npm start
 
 🔌 API Endpoints
 Posts
